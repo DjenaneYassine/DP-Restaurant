@@ -1,0 +1,57 @@
+body {
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+}
+
+@font-face {
+    font-family: 'Emberly-Regular';
+    src: url('../fonts/Emberly-Regular.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Emberly-ExtratLight';
+    src: url('../fonts/Emberly-ExtraLightNarrow.otf') format('woff2');
+    /* Ajoutez d'autres formats de police ici si nécessaire */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Emberly-SemiBold';
+    src: url('../fonts/Emberly-SemiBoldNarrow.otf') format('woff2');
+    /* Ajoutez d'autres formats de police ici si nécessaire */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITC';
+    src: url('../fonts/ITCAvantGardeStd-MdCn.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ITC-bold';
+    src: url('../fonts/ITCAvantGardeStd-Bold.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+/* ---------Navigation-------- */
+nav{
+    font-family: 'ITC', sans-serif;
+}
+
+
+
+
+
+/* ---------Navigation-------- */
