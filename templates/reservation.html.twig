@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Réservation{% endblock %}</title>
+
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {% block stylesheets %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+    <div class="wrapper-reservation">
+        {% include './partials/_navigation.html.twig' %}
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#fullscreenModal" style="padding:0; ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="43" height="40" viewBox="0 0 23.8 20.373">
+                <path id="ic_menu_24px" d="M3,26.373H26.8v-3.4H3Zm0-8.489H26.8v-3.4H3ZM3,6V9.4H26.8V6Z" transform="translate(-3 -6)" fill="#000000"/>
+            </svg>
+        </button>
+        <a href="{{ path('login_page') }}" class="btn btn-outline-danger btn-lg">
+            Connexion
+        </a>
+        <h2 class="display-2 title-reserv">Le Quai Antique</h2>
+        <div class="container-reservation">
+            <div class="wrapper-filter">
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Nombre de convive
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">1</a></li>
+                            <li><a class="dropdown-item" href="#">2</a></li>
+                            <li><a class="dropdown-item" href="#">3</a></li>
+                            <li><a class="dropdown-item" href="#">4</a></li>
+                            <li><a class="dropdown-item" href="#">5</a></li>
+                            <li><a class="dropdown-item" href="#">6</a></li>
+                            <li><a class="dropdown-item" href="#">7</a></li>
+                            <li><a class="dropdown-item" href="#">8</a></li>
+                        </ul>
+                    </div>
+                    <input type="date" id="datePicker" placeholder="Aujourd'hui">
+
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Toutes la journée
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Midi</a></li>
+                            <li><a class="dropdown-item" href="#">Soir</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form>
+            <label class="mt-5 display-5">Midi</label>
+            <div class="mt-3 container d-flex justify-content-center flex-wrap midi">
+                <div><button class="btn btn-outline-success">12:00</button></div>
+                <div><button class="btn btn-outline-success">12:15</button></div>
+                <div><button class="btn btn-outline-success">12:30</button></div>
+                <div><button class="btn btn-outline-success">12:45</button></div>
+                <div><button class="btn btn-outline-success">13:00</button></div>
+                <div><button class="btn btn-outline-success">13:15</button></div>
+                <div><button class="btn btn-outline-success">13:30</button></div>
+                <div><button class="btn btn-outline-success">13:45</button></div>
+            </div>
+            <label class="mt-5 display-5">Soir</label>
+            <div class="mt-3 container d-flex flex-wrap justify-content-center soir">
+                <div><button class="btn btn-outline-success">19:00</button></div>
+                <div><button class="btn btn-outline-success">19:15</button></div>
+                <div><button class="btn btn-outline-success">19:30</button></div>
+                <div><button class="btn btn-outline-success">19:45</button></div>
+                <div><button class="btn btn-outline-success">20:00</button></div>
+                <div><button class="btn btn-outline-success">20:15</button></div>
+            </div>
+            <div class="input-group flex-nowrap container mt-5 d-flex justify-content-center">
+                <span class="input-group-text" id="addon-wrapping">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                        <path id="ic_person_24px" d="M12,12A4,4,0,1,0,8,8,4,4,0,0,0,12,12Zm0,2c-2.67,0-8,1.34-8,4v2H20V18C20,15.34,14.67,14,12,14Z" transform="translate(-4 -4)"/>
+                    </svg>
+                </span>
+                <input type="text" class="form-control" placeholder="name" aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
+                <div class="form-outline container mt-2 d-flex justify-content-center">
+                    <textarea class="form-control" id="textAreaExample1" rows="4" placeholder="Veuillez listez vos allergènes"></textarea>
+                </div>
+            <button class="btn-lg fs-3 mt-5 d-flex container justify-content-center text-center btn btn-success">Réserver</button>
+        </form>
+        <h2 class="mt-5 display-5">Heure d'ouverture</h2>
+        <div class="container contain-horaire ">
+            <span class="fs-3">Mardi, mercredi, jeudi et dimanche - 12h00 - 21h00<br>
+                Vendredi et samedi - 12h00 - 22h00</span>
+            <a href="#" class="fs-3 text-success d-none">Modifier</a>
+        </div>
+
+        <button type="button" class="btn-lg fs-3 mt-5 d-flex container justify-content-center text-center btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Menu du moment
+        </button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" style="height: 25vh;">
+                    <div class="modal-body container-menu">
+                        <div class="Dejeuner menu-modal">
+                            <h3 class="fs-1">Formule déjeuner</h3>
+                            <span class="fs-4">(Du lundi au samedi midi)</span>
+                            <span>Entrée + plat + dessert 30€</span>
+                        </div>
+                        <div class="separateur-menu d-flex container justify-content-center"></div>
+                        <div class="Diner menu-modal">
+                            <h3 class="fs-1">Formule diner</h3>
+                            <span class="fs-4">(Du lundi au samedi midi)</span>
+                            <span>Entrée + plat ou plat + dessert 30€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+{% endblock %}
+</body>
+</html>

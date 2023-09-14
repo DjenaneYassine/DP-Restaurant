@@ -1,5 +1,21 @@
 {% block nav %}
-    <nav class="">
-        <ul><
-    </nav>
+    <div class=" modal fade" id="fullscreenModal" tabindex="-1" aria-labelledby="fullscreenModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content nav">
+                <div class="modal-body">
+                    <button type="button" class="btn close" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 14 14">
+                            <path id="ic_clear_24px" d="M19,6.41,17.59,5,12,10.59,6.41,5,5,6.41,10.59,12,5,17.59,6.41,19,12,13.41,17.59,19,19,17.59,13.41,12Z" transform="translate(-5 -5)" fill="#fff"/>
+                        </svg>
+                    </button>
+                    <ul>
+                        <li><a href="{{ path('home_principal') }}">Accueil</a></li>
+                        <li><a href="{{ path('reservation_page') }}">Réservation</a></li>
+                        <li><a href="#">Carte</a></li>
+                        <li><a href="#">Galerie d'images</a></li>
+                        <li><a href="{{ path('login_page') }}">Connexion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock nav %}

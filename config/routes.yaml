@@ -3,3 +3,16 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+home_principal:
+    path: /HomeController
+    controller: App\Controller\HomeController::displayBaseTemplate
+login_page:
+    path: /LoginController
+    controller: App\Controller\Login::displayLogin
+createLogin_page:
+    path: /CreateLoginController
+    controller: App\Controller\CreateLogin::displayCreateLogin
+reservation_page:
+    path: /ReservationController
+    controller: App\Controller\ReservationController::displayReservation
+

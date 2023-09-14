@@ -5,11 +5,10 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class ReservationController extends AbstractController
 {
-
     #[Route("/")]
-    public function displayBaseTemplate(){
-        return $this->render("base.html.twig");
+    public function displayReservation(){
+        return $this->render("reservation.html.twig");
     }
 }
