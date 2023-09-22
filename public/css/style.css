@@ -274,22 +274,29 @@ footer{
     font-size: 50px;
 }
 
-.input-login > div{
+.form > div> input{
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding-bottom: 1vh;
 }
-.input-login > div{
 
-}
 .input-login > div > span{
     position: absolute;
     right: 10px;
     top: 11px;
 }
-.input-login > div > input{
+
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+form > div > input{
     background-color: var(--couleur-bleu);
     width: 400px;
     height: 50px;
@@ -297,10 +304,12 @@ footer{
     border: none;
     border-bottom: 2px solid white;
     font-size: 20px;
-    padding-right: 40px;
+    padding-right: 30px;
+
 }
 
-.btn-login > button, .btn-login > a{
+.btn-valider, .btn-login > a{
+    margin-top: 40px;
     font-size: 20px;
     width: 200px;
 }

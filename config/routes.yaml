@@ -7,11 +7,13 @@ home_principal:
     path: /HomeController
     controller: App\Controller\HomeController::displayBaseTemplate
 login_page:
-    path: /LoginController
-    controller: App\Controller\Login::displayLogin
+    path: /login
+    controller: App\Controller\SecurityController::login
+app_logout:
+    path: /logout
 createLogin_page:
-    path: /CreateLoginController
-    controller: App\Controller\CreateLogin::displayCreateLogin
+    path: /Register
+    controller: App\Controller\RegistrationController::register
 reservation_page:
     path: /ReservationController
     controller: App\Controller\ReservationController::displayReservation

@@ -12,7 +12,11 @@
                         <li><a href="{{ path('reservation_page') }}">Réservation</a></li>
                         <li><a href="#">Carte</a></li>
                         <li><a href="#">Galerie d'images</a></li>
-                        <li><a href="{{ path('login_page') }}">Connexion</a></li>
+                        {% if not app.user %}
+                            <li><a href="{{ path('login_page') }}">Connexion</a></li>
+                        {% else %}
+                            <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
